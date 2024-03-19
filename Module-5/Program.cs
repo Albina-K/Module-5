@@ -137,14 +137,9 @@ namespace Module_5
                 {
                     Console.WriteLine(name);
                 }
-              //  return;
+              
             }
-          //  else 
-         //   {
-          //      Console.WriteLine("У Вас нет питомцев");
-          //  }
-
-        //    if (datauser.Item7 != null)
+        
             Console.WriteLine("Ваши любимые цвета: ");
             foreach (string color in datauser.Item7)
             {
