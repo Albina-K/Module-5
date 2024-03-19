@@ -8,8 +8,7 @@ namespace Module_5
 
         static void Main(string[] args)
         {
-            (string Name, string Lastname, int Age, string[] PetName, int NumbersPets, int NColor, string[] Favcolor) = EnterUser();
-            UserScreen(datauser);
+            UserScreen(EnterUser());
             Console.ReadKey();
         }
 
@@ -53,13 +52,13 @@ namespace Module_5
                 }
                 else
                     User.PetName = null;
+                
             }
 
-            //  User.PetName = CreateArrayPets(intpet);
             else
                 User.PetName = null;
             User.NumbersPets = 0;
-
+            
 
 
             string color;
@@ -127,12 +126,30 @@ namespace Module_5
 
         static void UserScreen((string Name, string Lastname, int Age, string[] PetName, int NumbersPets, int NColor, string[] Favcolor) datauser)
         {
+            Console.WriteLine("--------------------------------------------");
             Console.WriteLine($"Ваше имя: \n {datauser.Item1}");
             Console.WriteLine($"Ваша фамилия: \n {datauser.Item2}");
             Console.WriteLine($"Ваш возраст \n {datauser.Item3}");
-            Console.WriteLine($"Ваши имена питомцев \n {datauser.Item4}");
-            Console.WriteLine($"Ваши любимые цвета \n {datauser.Item7}");
-           
+            if (datauser.Item4 != null && datauser.PetName.Length > 0)
+            {
+                Console.WriteLine("Имена питомцев ");
+                foreach (string name in datauser.Item4)
+                {
+                    Console.WriteLine(name);
+                }
+              //  return;
+            }
+          //  else 
+         //   {
+          //      Console.WriteLine("У Вас нет питомцев");
+          //  }
+
+        //    if (datauser.Item7 != null)
+            Console.WriteLine("Ваши любимые цвета: ");
+            foreach (string color in datauser.Item7)
+            {
+                Console.WriteLine(color);
+            }
 
         }
 
